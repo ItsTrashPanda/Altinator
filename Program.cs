@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AltinatorTray;
+using System.Runtime.InteropServices;
 using Altinator;
 
-namespace AltinatorTray
+namespace AltinatorTrayApp
 {
 	internal static class Program
 	{
 		[STAThread]
-		static void Main()
+		public static void Main()
 		{
 			//ApplicationConfiguration.Initialize();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new TrayAppContext());
+			InterceptKeys.InitComponent();
 		}
 	}
 }
